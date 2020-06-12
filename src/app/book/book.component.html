@@ -1,0 +1,17 @@
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Tên sách</td>
+    <td>Tác giả</td>
+    <td colspan="2">Chức năng</td>
+  </tr>
+  <tr *ngFor="let book of bookList; index as i">
+    <td>{{book.id}}</td>
+    <td><a [routerLink]="['/book',book.id]">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><button [routerLink]="['/book',book.id,'edit']">Edit</button></td>
+    <td><button (click)="deleteBook(i)">Delete</button></td>
+  </tr>
+</table>
+
+
